@@ -1,0 +1,25 @@
+'use strict';
+
+const Service = require('egg').Service;
+
+class HomeService extends Service {
+  async data(cindex, cpageSize) {
+    const { app } = this;
+    const index = cindex;
+    const pageSize = cpageSize;
+    const QUERY_STR = 'id, time, title, author';
+    const sql = `select ${QUERY_STR} from data`; // 获取 id 的 sql 语句
+    try {
+      const result = await app.mysql.query(sql); // mysql 实例已经挂载到 app 对象下，可以通过 app.mysql 获取到。
+      const count = result.length;
+      const res = result.slice(index, index + pageSize);
+      res.push(count);
+      return res;
+    } catch (error) {
+      console.log(error);
+      return null;
+    }
+  }
+}
+module.exports = HomeService;
+

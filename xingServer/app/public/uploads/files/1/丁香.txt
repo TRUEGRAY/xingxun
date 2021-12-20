@@ -1,0 +1,1 @@
+<figure class="image image-style-side"><img src="http://127.0.0.1:7001/public/uploads/images/1/OIP-C.jpg"><figcaption>图片来源于网络</figcaption></figure><p>丁香，中药名。为桃金娘科植物丁香Eugenia caryophμllataThunb.的干燥花蕾。当花蕾由绿色转红时采摘，晒干。</p><p><strong>中文学名：</strong> 丁香</p><p><strong>别称：</strong> 公丁香 、丁子香</p><p><strong>界：</strong> 植物界</p><p><strong>门：</strong> 被子植物门</p><p><strong>纲：</strong> 双子叶植物纲</p>
