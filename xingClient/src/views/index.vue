@@ -93,7 +93,7 @@ export default {
   overflow-y: auto;
 }
 .el-header{
-  background: url(../../public/附件3：logo2.png) no-repeat;
+  /* background: url(../../public/附件3：logo2.png) no-repeat; */
   background-size: 20%;
   background-position: 0% 50%;
   border-bottom: .8px solid rgba(231, 231, 231, 0.897);
