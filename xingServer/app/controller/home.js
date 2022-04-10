@@ -1,4 +1,4 @@
-'use strict';
+/* eslint-disable */
 const fs = require('fs');
 const path = require('path');
 const Controller = require('egg').Controller;
@@ -19,9 +19,9 @@ class HomeController extends Controller {
       });
       const address1 = path.join(this.config.baseDir, `app/public/uploads/images/${id}/`);
       const address2 = path.join(this.config.baseDir, `app/public/uploads/files/${id}/`);
-      const emptyDir = function(fileUrl) {
+      const emptyDir = function (fileUrl) {
         const files = fs.readdirSync(fileUrl);// 读取该文件夹
-        files.forEach(function(file) {
+        files.forEach(function (file) {
           undefined;
           const stats = fs.statSync(fileUrl + '/' + file);
           if (stats.isDirectory()) {
@@ -36,13 +36,13 @@ class HomeController extends Controller {
       };
 
       // 删除所有的空文件夹
-      const rmEmptyDir = function(fileUrl) {
+      const rmEmptyDir = function (fileUrl) {
         undefined;
         const files = fs.readdirSync(fileUrl);
         if (files.length > 0) {
           undefined;
           let tempFile = 0;
-          files.forEach(function(fileName) {
+          files.forEach(function (fileName) {
             undefined;
             tempFile++;
             rmEmptyDir(fileUrl + '/' + fileName);
@@ -86,7 +86,7 @@ class HomeController extends Controller {
       const time = new Date();
       const ids = await this.app.mysql.select('data', { // 搜索 data 表
         columns: 'id', // 要查询的表字段
-        orders: [[ 'id', 'DESC' ]], // 排序方式
+        orders: [['id', 'DESC']], // 排序方式
         limit: 1, // 返回数据量
         offset: 0, // 数据偏移量
       });
@@ -128,7 +128,7 @@ class HomeController extends Controller {
       if (idd === 'undefined') {
         const ids = await this.app.mysql.select('data', { // 搜索 data 表
           columns: 'id', // 要查询的表字段
-          orders: [[ 'id', 'DESC' ]], // 排序方式
+          orders: [['id', 'DESC']], // 排序方式
           limit: 1, // 返回数据量
           offset: 0, // 数据偏移量
         });
@@ -168,7 +168,7 @@ class HomeController extends Controller {
       // sql语句字段名和这里定义的变量名是对应的笑死
       const row = await this.app.mysql.get('data', { id: idC });
       const addr = path.join(this.config.baseDir, row.container);
-      fs.writeFileSync(addr, containerUP, function(err) {
+      fs.writeFileSync(addr, containerUP, function (err) {
         if (err) {
           throw err;
         }
